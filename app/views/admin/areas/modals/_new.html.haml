@@ -1,0 +1,28 @@
+#modal-new.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h3.modal-title
+          Create Area
+      .modal-body
+        .modal-body-content
+          .row
+            .col
+              .form-group
+                %label
+                  Area Name
+                %input#area-name.form-control
+          .row
+            .col
+              .form-group
+                %label
+                  Area Shortname
+                %input#area-shortname.form-control
+      .modal-footer
+        .controls
+          %button#btn-save.btn.btn-primary
+            .fa.fa-check
+            Save
+          %button.btn{"data-bs-dismiss" => "modal", :type => "button"}
+            .fa.fa-times
+            Cancel

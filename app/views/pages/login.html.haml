@@ -1,0 +1,29 @@
+.d-flex.align-items-center{ style: "height: 100vh;" }
+  .container{style: "width: 350px"}
+    .card
+      .card-body
+        %center
+          = image_tag "363443565_244580528520597_6973600696217717976_n.jpg", width: "300px"
+        %hr
+        .row
+          .col
+            .mb-4
+              %label.form-label{ for: "input-username" }
+                Username
+              = text_field_tag :username, "", id: "input-username", class: "form-control", placeholder: "USERNAME"
+            .mb-4
+              %label.form-label{ for: "input-password" }
+                Password
+              = password_field_tag :username, "", id: "input-password", class: "form-control", placeholder: "PASSWORD"
+            .message
+        %hr
+        .row
+          .col
+            %center
+              .btn-group
+                #btn-login.btn.btn-primary
+                  .fa.fa-sign-in-alt
+                  Login to System
+              %hr
+              = link_to "#", id: "btn-forgot-password" do
+                Forgot Password

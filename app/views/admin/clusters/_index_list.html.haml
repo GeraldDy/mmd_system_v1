@@ -1,0 +1,32 @@
+%table#data-table.display.table.table-bordered.table-hover.table-sm
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Short Name
+      %th
+        Area
+      %th
+        Actions
+  %tbody
+    %tbody
+    - @clusters.each do |cluster|
+      %tr
+        %td
+          #{cluster.name.upcase}
+        %td
+          #{cluster.short_name.upcase}
+        %td
+          #{Cluster.find(cluster.id).area.name}
+
+        %td{style: "width: 150px"}
+          .btn-group-vertical{style: "width: 150px"}
+            = link_to admin_cluster_path(cluster), class: 'btn btn-sm btn-primary btn-block' do
+              .bi.bi-search
+              Show
+            = link_to edit_admin_cluster_path(cluster), class: 'btn btn-sm btn-info btn-block' do
+              .bi.bi-pencil-fill
+              Edit
+
+        

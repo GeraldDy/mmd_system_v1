@@ -1,0 +1,27 @@
+%table#data-table.display.table.table-bordered.table-hover.table-sm
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        KSO
+      %th
+        Actions
+  %tbody
+    - @job_levels.each do |job_levels|
+      %tr
+        %td
+          #{job_levels.name.upcase}
+        %td
+          - Settings[:kso_org].each do |kso|
+            -if kso[:id] == job_levels.kso_id
+              #{kso[:name]}
+        %td{style: "width: 150px"}
+          .btn-group-vertical{style: "width: 150px"}
+            = link_to admin_job_level_path(job_levels), class: 'btn btn-sm btn-primary btn-block' do
+              .bi.bi-search
+              Show
+            = link_to edit_admin_job_level_path(job_levels), class: 'btn btn-sm btn-info btn-block' do
+              .bi.bi-pencil-fill
+              Edit
+        

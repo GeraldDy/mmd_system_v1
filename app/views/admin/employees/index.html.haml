@@ -1,0 +1,11 @@
+%main.c-main
+  .container-fluid
+    .row
+      .col
+        .card
+          .card-body
+            - if @employees.any?
+              = render partial: "index_list"
+            - else
+              %p
+                No Employee's Found

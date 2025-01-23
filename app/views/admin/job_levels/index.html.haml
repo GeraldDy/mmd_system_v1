@@ -1,0 +1,12 @@
+%main.c-main
+  .container-fluid
+    .row
+      .col
+        .card
+          .card-body
+            - if @job_levels.any?
+              = render partial: "index_list"
+            - else
+              %p
+                No Job Levels Found
+=render partial: "admin/job_levels/modals/new"

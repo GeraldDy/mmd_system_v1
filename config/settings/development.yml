@@ -1,0 +1,14 @@
+app_name: HRsystem
+kso_org:
+  -
+    id: "f6541d1a-845a-47df-aa58-d670c8b5f8fb"
+    name: "K - COOP"
+    short_name: "KCOOP"
+  -
+    id: "6ac8ef87-a98d-48c6-ad46-34250ff5ceef"
+    name: "KDCI"
+    short_name: "KDCI"
+  -
+    id: "a8aa5140-6b24-4c66-b834-e2c1a66e7968"
+    name: "KMBA"
+    short_name: "KMBA"

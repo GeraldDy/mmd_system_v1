@@ -1,0 +1,12 @@
+%main.c-main
+  .container-fluid
+    .row
+      .col
+        .card
+          .card-body
+            - if @clusters.any?
+              = render partial: "index_list"
+            - else
+              %p
+                No areas found
+=render partial: "admin/clusters/modals/new"

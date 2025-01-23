@@ -1,0 +1,28 @@
+%table#data-table.display.table.table-bordered.table-hover.table-sm
+  %thead
+    %tr
+      %th
+      %th.text-center
+        Employee ID
+      %th.text-center
+        Employee Name
+      %th.text-center
+        Email Address
+      %th.text-center
+        Actions
+  %tbody
+    -@employees.each_with_index do |emp,index|
+      %tr
+        %td
+          #{index + 1}
+        %td.text-center
+          #{emp[:employee_number]}
+        %td.text-center
+          #{Employee.find(emp[:id]).full_name}
+        %td.text-center
+          #{emp[:email_address]}
+        %td.text-center{style: "width: 150px"}
+          .btn-group-vertical{style: "width: 150px"}
+            = link_to admin_employee_path(emp), class: 'btn btn-sm btn-primary btn-block' do
+              .bi.bi-search
+              Details

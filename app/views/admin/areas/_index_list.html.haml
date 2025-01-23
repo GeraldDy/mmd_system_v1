@@ -1,0 +1,26 @@
+%table#data-table.display.table.table-bordered.table-hover.table-sm
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Short Name
+      %th
+        Actions
+  %tbody
+    - @areas.each do |area|
+      %tr
+        %td
+          #{area.name.upcase}
+        %td
+          #{area.short_name.upcase}
+
+        %td{style: "width: 150px"}
+          .btn-group-vertical{style: "width: 150px"}
+            = link_to admin_area_path(area), class: 'btn btn-sm btn-primary btn-block' do
+              .bi.bi-search
+              Show
+            = link_to edit_admin_area_path(area), class: 'btn btn-sm btn-info btn-block' do
+              .bi.bi-pencil-fill
+              Edit
+        

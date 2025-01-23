@@ -1,0 +1,80 @@
+.sidebar
+	= link_to root_path do
+		.logo-details
+			%i.bi.bi-house-door
+			%span.logo-name
+				MMD SYSTEM
+	%ul.nav-links
+		%li{ class: "#{params[:controller] == 'pages' and params[:action] == 'index' ? 'active' : ''}" }
+			= link_to root_path, class: "" do
+				%i.bi.bi-speedometer
+				%span.link-name
+					Dashboard
+		%li
+			= link_to root_path, class: "" do
+				%i.bi.bi-person-fill-add
+				%span.link-name
+					Sales Invoices Registry
+		%li
+			= link_to root_path, class: "" do
+				%i.bi.bi-person-fill-add
+				%span.link-name
+					Collection
+
+		%li{ class: "#{params[:controller] == '' ? 'active' : ''}" }
+			.icon-link
+				= link_to "#", class: "" do
+					%i.bi.bi-gear
+					%span.link-name
+						Admin
+				%i.bi.bi-caret-down.arrow
+			%ul.sub-menu
+				%li
+					= link_to admin_employees_path, class: "" do
+						%i.bi.bi-people-fill
+							Employee
+				%li
+					= link_to admin_job_levels_path, class: "" do
+						%i.bi.bi-person-workspace
+							Job Level	
+				%li
+					= link_to "#", class: "", data: { "bs-toggle": "modal", "bs-target": "#modal-nav-admin" } do
+						%i.bi.bi-diagram-2-fill
+							Department
+				%li
+					= link_to "#", class: "", data: { "bs-toggle": "modal", "bs-target": "#modal-nav-admin" } do
+						%i.bi.bi-table
+							Salary Table
+				%li
+					= link_to admin_areas_path, class: "" do
+						%i.bi.bi-globe2
+							Area
+				%li
+					= link_to admin_clusters_path, class: "" do
+						%i.bi.bi-map-fill
+							Cluster
+				%li
+					= link_to admin_branches_path, class: "" do
+						%i.bi.bi-pin-map-fill
+							Branches
+				%li
+					= link_to "#", class: "", data: { "bs-toggle": "modal", "bs-target": "#modal-nav-admin" } do
+						%i.bi.bi-person-lock
+							Users
+				%li
+					= link_to "#", class: "", data: { "bs-toggle": "modal", "bs-target": "#modal-nav-admin" } do
+						%i.bi.bi-journal-check
+							Exams
+		%li
+			.profile-details
+				= link_to "#" do
+					.profile-content
+						= image_tag "image.jpg"
+					.name-job
+						.profile-name
+							#{current_user.email}
+						.job
+							#{current_user.employee.full_name}
+				= link_to destroy_user_session_path do
+					%i.bi.bi-box-arrow-left
+							

@@ -1,0 +1,33 @@
+%table#data-table.display.table.table-bordered.table-hover.table-sm
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Short Name
+      %th
+        Cluster
+      %th
+        Area
+      %th
+        Actions
+  %tbody
+    - @branch.each do |branch|
+      %tr
+        %td
+          #{branch.name.upcase}
+        %td
+          #{branch.short_name.upcase}
+        %td
+          #{branch.cluster.name.upcase}
+        %td
+          #{Cluster.find(branch.cluster_id).area.name.upcase}
+        %td{style: "width: 150px"}
+          .btn-group-vertical{style: "width: 150px"}
+            = link_to admin_branch_path(branch), class: 'btn btn-sm btn-primary btn-block' do
+              .bi.bi-search
+              Show
+            = link_to edit_admin_branch_path(branch), class: 'btn btn-sm btn-info btn-block' do
+              .bi.bi-pencil-fill
+              Edit
+        
